@@ -1,9 +1,14 @@
 <template>
-    <div>
-        <h5>
-            {{images}}
-        </h5>
-    </div>
+  <ul>
+    <li v-for="image in images">
+      <h3>
+          {{image.title}}
+      </h3>
+      <button>
+        X
+      </button>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -18,7 +23,8 @@ export default {
     },
     async created() {
         const response = await axios.get("http://127.0.0.1:8000/api/images/")
-        this.images = response.data.total
+        this.images = response.data
+        console.log(this.images)
     },
 }
 </script>
