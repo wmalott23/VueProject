@@ -1,7 +1,15 @@
 <template>
-    <div v-for="image in images">
-          <img :src="image.image_url">
-    </div>
+    <v-container
+        style="max-height: 50px"
+    >
+        <v-card v-for="image in images"
+            style="height: 50px"
+            outlined
+            tiled
+        >
+            <img :src="image.image_url">
+        </v-card>
+    </v-container>
 </template>
 
 <script>
@@ -23,13 +31,8 @@ export default {
 </script>
 
 <style>
-
-div {
-  display: block;
-  max-width: 100px;
-  max-height: 100px;
-  padding: 10px;
-  margin: 10px
+.img {
+    width: 50%;
 }
 
 </style>
