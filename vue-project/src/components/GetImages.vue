@@ -1,14 +1,7 @@
 <template>
-  <ul>
-    <li v-for="image in images">
-      <h3>
-          {{image.title}}
-      </h3>
-      <button>
-        X
-      </button>
-    </li>
-  </ul>
+    <div v-for="image in images">
+          <img :src="image.image_url">
+    </div>
 </template>
 
 <script>
@@ -28,3 +21,15 @@ export default {
     },
 }
 </script>
+
+<style>
+
+div {
+  display: block;
+  max-width: 100px;
+  max-height: 100px;
+  padding: 10px;
+  margin: 10px
+}
+
+</style>
